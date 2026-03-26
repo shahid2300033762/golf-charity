@@ -1,0 +1,322 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@200;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Icon font settings ── */
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* ══════════════════════════════════════════════════════
+   LUMINESCENT ARCHIVE — DESIGN SYSTEM CSS
+   ══════════════════════════════════════════════════════ */
+
+/* ── Global smooth scrolling ── */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ── Glass Card ── */
+.glass-card {
+  background: rgba(16, 30, 62, 0.50);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(144, 147, 255, 0.08);
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.glass-card:hover {
+  border-color: rgba(144, 147, 255, 0.15);
+  box-shadow: 0 8px 40px rgba(144, 147, 255, 0.06);
+}
+
+/* ── Hero background ── */
+.hero-bg {
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 40%, rgba(16, 30, 62, 0.9) 0%, transparent 70%),
+    radial-gradient(circle at 20% 80%, rgba(144, 147, 255, 0.04) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 185, 95, 0.03) 0%, transparent 50%),
+    #060e20;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── Ethereal glow orbs ── */
+.ethereal-glow {
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(144, 147, 255, 0.12) 0%, transparent 70%);
+  filter: blur(80px);
+  pointer-events: none;
+  will-change: transform;
+}
+.glow-tertiary {
+  background: radial-gradient(circle, rgba(255, 185, 95, 0.08) 0%, transparent 70%);
+}
+.glow-center {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(144, 147, 255, 0.06) 0%, transparent 60%);
+}
+
+/* ── Hero Portrait Overlay ── */
+.hero-portrait-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 45%, transparent 0%, rgba(6, 14, 32, 0.4) 40%, #060e20 85%);
+  z-index: 1;
+}
+
+/* ── Floating particles ── */
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+.particle-1 {
+  width: 4px; height: 4px;
+  background: rgba(144, 147, 255, 0.4);
+  top: 20%; left: 15%;
+  animation: particle-float 8s ease-in-out infinite;
+}
+.particle-2 {
+  width: 3px; height: 3px;
+  background: rgba(255, 185, 95, 0.35);
+  top: 60%; right: 20%;
+  animation: particle-float 10s ease-in-out infinite 1s;
+}
+.particle-3 {
+  width: 5px; height: 5px;
+  background: rgba(208, 188, 255, 0.3);
+  top: 35%; right: 10%;
+  animation: particle-float 12s ease-in-out infinite 2s;
+}
+.particle-4 {
+  width: 3px; height: 3px;
+  background: rgba(144, 147, 255, 0.3);
+  bottom: 30%; left: 25%;
+  animation: particle-float 9s ease-in-out infinite 3s;
+}
+.particle-5 {
+  width: 4px; height: 4px;
+  background: rgba(255, 185, 95, 0.25);
+  top: 45%; left: 60%;
+  animation: particle-float 11s ease-in-out infinite 4s;
+}
+
+/* ── Text gradient ── */
+.text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(135deg, #9093ff 0%, #d0bcff 50%, #ffb95f 100%);
+  background-size: 200% 200%;
+  animation: gradient-shift 6s ease-in-out infinite;
+}
+
+/* ── Premium card hover ── */
+.card-premium {
+  background: rgba(16, 30, 62, 0.6);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(144, 147, 255, 0.1);
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+/* ══════════════════════════════════════
+   KEYFRAME ANIMATIONS
+   ══════════════════════════════════════ */
+
+/* Hero element fade-up entrance */
+@keyframes hero-entrance {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+.hero-fade-up {
+  opacity: 0;
+  animation: hero-entrance 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* Particle floating */
+@keyframes particle-float {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.4;
+  }
+  25% {
+    transform: translate(15px, -25px) scale(1.2);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translate(-10px, -40px) scale(0.9);
+    opacity: 0.3;
+  }
+  75% {
+    transform: translate(20px, -15px) scale(1.1);
+    opacity: 0.6;
+  }
+}
+
+/* Glow orb drifts */
+@keyframes glow-drift {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -20px) scale(1.05);
+  }
+  66% {
+    transform: translate(-15px, 15px) scale(0.95);
+  }
+}
+.animate-glow-drift {
+  animation: glow-drift 15s ease-in-out infinite;
+}
+
+@keyframes glow-drift-reverse {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(-25px, 20px) scale(1.03);
+  }
+  66% {
+    transform: translate(20px, -10px) scale(0.97);
+  }
+}
+.animate-glow-drift-reverse {
+  animation: glow-drift-reverse 18s ease-in-out infinite;
+}
+
+/* Gradient shimmer for text */
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Gentle float */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Slow bounce for scroll indicator */
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translateY(8px);
+    opacity: 0.7;
+  }
+}
+.animate-bounce-slow {
+  animation: bounce-slow 2.5s ease-in-out infinite;
+}
+
+/* Pulse slow for hero portrait */
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.35; transform: scale(1.1); }
+  50% { opacity: 0.45; transform: scale(1.15); }
+}
+.animate-pulse-slow {
+  animation: pulse-slow 8s ease-in-out infinite;
+}
+
+/* Stat card shimmer on hover */
+.stat-card {
+  position: relative;
+  overflow: hidden;
+}
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(144, 147, 255, 0.03),
+    transparent
+  );
+  transition: left 0.8s ease;
+}
+.stat-card:hover::before {
+  left: 100%;
+}
+
+/* Tabular numbers for stat counters */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Progress Indicators ── */
+.progress-bar-container {
+  @apply h-1.5 w-full bg-white/5 rounded-full overflow-hidden;
+}
+.progress-bar-fill {
+  @apply h-full bg-gradient-to-r from-[#8B5CF6] to-[#A78BFA] transition-all duration-1000 ease-out;
+}
+
+/* ── Premium Gradient Buttons ── */
+.btn-gradient {
+  background: linear-gradient(90deg, #8B5CF6 0%, #6366F1 100%);
+  color: white;
+  transition: all 0.5s ease;
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.2);
+}
+.btn-gradient:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 8px 30px rgba(139, 92, 246, 0.4);
+  transform: translateY(-2px);
+}
+
+/* ── Transition duration utility ── */
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* ── Custom scrollbar (WebKit) ── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #060e20;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(144, 147, 255, 0.2);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(144, 147, 255, 0.35);
+}
+
+/* ── Selection color ── */
+::selection {
+  background: rgba(144, 147, 255, 0.3);
+  color: #dee5ff;
+}

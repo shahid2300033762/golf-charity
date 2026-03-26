@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Fairway Impact | Score Entry</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-tint": "#9093ff",
+                        "surface": "#060e20",
+                        "on-tertiary-container": "#4f3000",
+                        "on-error": "#490013",
+                        "surface-dim": "#060e20",
+                        "secondary-container": "#2f0076",
+                        "surface-container-lowest": "#000000",
+                        "on-secondary-container": "#b192ff",
+                        "secondary": "#d0bcff",
+                        "primary-container": "#7073ff",
+                        "surface-bright": "#172b54",
+                        "on-primary-container": "#000000",
+                        "surface-container-highest": "#142449",
+                        "on-primary-fixed": "#0c0090",
+                        "on-secondary-fixed-variant": "#6a37d4",
+                        "error-container": "#8a1632",
+                        "primary-fixed": "#babbff",
+                        "tertiary-fixed": "#fea619",
+                        "on-tertiary": "#5c3800",
+                        "on-primary": "#080079",
+                        "outline": "#65759e",
+                        "error": "#fd6f85",
+                        "surface-variant": "#142449",
+                        "on-secondary-fixed": "#4d00b7",
+                        "tertiary-fixed-dim": "#ee9800",
+                        "surface-container-low": "#081329",
+                        "outline-variant": "#38476d",
+                        "primary-dim": "#6063ee",
+                        "on-tertiary-fixed-variant": "#5b3800",
+                        "error-dim": "#c8475d",
+                        "on-tertiary-fixed": "#311c00",
+                        "tertiary-dim": "#e79400",
+                        "inverse-on-surface": "#4d556b",
+                        "on-surface-variant": "#9baad6",
+                        "primary": "#9093ff",
+                        "inverse-primary": "#494bd7",
+                        "inverse-surface": "#faf8ff",
+                        "surface-container-high": "#101e3e",
+                        "on-background": "#dee5ff",
+                        "on-surface": "#dee5ff",
+                        "secondary-fixed-dim": "#ddcdff",
+                        "primary-fixed-dim": "#aaacff",
+                        "on-primary-fixed-variant": "#2d2cbd",
+                        "background": "#060e20",
+                        "on-secondary": "#4e03b8",
+                        "secondary-dim": "#8455ef",
+                        "tertiary-container": "#fea619",
+                        "tertiary": "#ffb95f",
+                        "surface-container": "#0c1934",
+                        "secondary-fixed": "#e9ddff",
+                        "on-error-container": "#ff97a3"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(12, 25, 52, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .ethereal-bg {
+            background: radial-gradient(circle at 20% 30%, rgba(144, 147, 255, 0.08) 0%, transparent 40%),
+                        radial-gradient(circle at 80% 70%, rgba(255, 185, 95, 0.05) 0%, transparent 40%),
+                        #060e20;
+        }
+    </style>
+</head>
+<body class="font-body text-on-surface ethereal-bg min-h-screen">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/60 backdrop-blur-xl dark:bg-[#060e20]/60 shadow-2xl shadow-black/20">
+<div class="flex justify-between items-center h-20 px-12 max-w-[1920px] mx-auto bg-gradient-to-b from-[#081329] to-transparent">
+<div class="text-2xl font-bold tracking-tighter text-[#dee5ff] dark:text-[#dee5ff]">Fairway Impact</div>
+<nav class="hidden md:flex items-center gap-8 font-['Manrope'] tracking-wide text-sm font-medium">
+<a class="text-[#dee5ff]/70 hover:text-[#dee5ff] transition-colors duration-200" href="#">Home</a>
+<a class="text-[#dee5ff]/70 hover:text-[#dee5ff] transition-colors duration-200" href="#">Dashboard</a>
+<a class="text-[#dee5ff]/70 hover:text-[#dee5ff] transition-colors duration-200" href="#">Charities</a>
+<a class="text-[#9093ff] border-b-2 border-[#9093ff] pb-1" href="#">Scores</a>
+<a class="text-[#dee5ff]/70 hover:text-[#dee5ff] transition-colors duration-200" href="#">Draws</a>
+</nav>
+<div class="flex items-center gap-6">
+<div class="flex gap-4">
+<button class="p-2 hover:bg-[#101e3e]/50 rounded-lg transition-all duration-300 scale-95 active:scale-90">
+<span class="material-symbols-outlined text-[#dee5ff]" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 hover:bg-[#101e3e]/50 rounded-lg transition-all duration-300 scale-95 active:scale-90">
+<span class="material-symbols-outlined text-[#dee5ff]" data-icon="account_circle">account_circle</span>
+</button>
+</div>
+<button class="bg-gradient-to-r from-primary to-primary-dim text-on-primary-container px-6 py-2.5 rounded-full font-headline font-bold text-sm tracking-wide shadow-lg shadow-primary/20 hover:scale-105 active:scale-95 transition-all">
+                    Join the Impact
+                </button>
+</div>
+</div>
+</header>
+<main class="pt-32 pb-24 px-12 max-w-[1400px] mx-auto">
+<!-- Hero Title Section -->
+<section class="mb-20 text-center">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-surface-container-high border border-outline-variant/20 mb-6">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="text-xs font-label font-medium uppercase tracking-widest text-on-surface-variant">Performance Entry</span>
+</div>
+<h1 class="font-headline text-5xl md:text-6xl font-extrabold tracking-tight text-on-surface mb-6">Log Your <span class="text-primary">Impact</span></h1>
+<p class="font-body text-on-surface-variant text-lg max-w-2xl mx-auto leading-relaxed">
+                Submit your last 5 scores to calculate your current Impact Rating. Every stroke contributes to our monthly charity pool.
+            </p>
+</section>
+<!-- Score Grid -->
+<section class="grid grid-cols-1 gap-8 mb-20">
+<div class="grid grid-cols-1 md:grid-cols-5 gap-6">
+<!-- Score Cards (1 to 5) -->
+<div class="glass-panel p-8 rounded-xl border border-outline-variant/10 hover:border-primary/30 transition-all group">
+<div class="flex justify-between items-start mb-6">
+<span class="text-3xl font-headline font-black text-outline-variant/30 group-hover:text-primary/40 transition-colors">01</span>
+<span class="material-symbols-outlined text-primary/50" data-icon="golf_course">golf_course</span>
+</div>
+<div class="space-y-4">
+<div>
+<label class="block text-xs font-label font-bold text-on-surface-variant uppercase tracking-tighter mb-2">Total Score</label>
+<input class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant/30 focus:border-tertiary focus:ring-0 text-2xl font-headline font-bold text-primary transition-all p-0 pb-2" placeholder="--" type="number"/>
+</div>
+<div>
+<label class="block text-xs font-label font-bold text-on-surface-variant uppercase tracking-tighter mb-2">Course Slope</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant/20 focus:border-tertiary focus:ring-0 text-sm font-body text-on-surface transition-all p-0 pb-1" placeholder="113" type="number"/>
+</div>
+</div>
+</div>
+<div class="glass-panel p-8 rounded-xl border border-outline-variant/10 hover:border-primary/30 transition-all group">
+<div class="flex justify-between items-start mb-6">
+<span class="text-3xl font-headline font-black text-outline-variant/30 group-hover:text-primary/40 transition-colors">02</span>
+<span class="material-symbols-outlined text-primary/50" data-icon="flag">flag</span>
+</div>
+<div class="space-y-4">
+<div>
+<label class="block text-xs font-label font-bold text-on-surface-variant uppercase tracking-tighter mb-2">Total Score</label>
+<input class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant/30 focus:border-tertiary focus:ring-0 text-2xl font-headline font-bold text-primary transition-all p-0 pb-2" placeholder="--" type="number"/>
+</div>
+<div>
+<label class="block text-xs font-label font-bold text-on-surface-variant uppercase tracking-tighter mb-2">Course Slope</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant/20 focus:border-tertiary focus:ring-0 text-sm font-body text-on-surface transition-all p-0 pb-1" placeholder="113" type="number"/>
+</div>
+</div>
+</div>
+<div class="glass-panel p-8 rounded-xl border border-outline-variant/10 hover:border-primary/30 transition-all group">
+<div class="flex justify-between items-start mb-6">
+<span class="text-3xl font-headline font-black text-outline-variant/30 group-hover:text-primary/40 transition-colors">03</span>
+<span class="material-symbols-outlined text-primary/50" data-icon="sports_score">sports_score</span>
+</div>
+<div class="space-y-4">
+<div>
+<label class="block text-xs font-label font-bold text-on-surface-variant uppercase tracking-tighter mb-2">Total Score</label>
+<input class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant/30 focus:border-tertiary focus:ring-0 text-2xl font-headline font-bold text-primary transition-all p-0 pb-2" placeholder="--" type="number"/>
+</div>
+<div>
+<label class="block text-xs font-label font-bold text-on-surface-variant uppercase tracking-tighter mb-2">Course Slope</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant/20 focus:border-tertiary focus:ring-0 text-sm font-body text-on-surface transition-all p-0 pb-1" placeholder="113" type="number"/>
+</div>
+</div>
+</div>
+<div class="glass-panel p-8 rounded-xl border border-outline-variant/10 hover:border-primary/30 transition-all group">
+<div class="flex justify-between items-start mb-6">
+<span class="text-3xl font-headline font-black text-outline-variant/30 group-hover:text-primary/40 transition-colors">04</span>
+<span class="material-symbols-outlined text-primary/50" data-icon="history">history</span>
+</div>
+<div class="space-y-4">
+<div>
+<label class="block text-xs font-label font-bold text-on-surface-variant uppercase tracking-tighter mb-2">Total Score</label>
+<input class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant/30 focus:border-tertiary focus:ring-0 text-2xl font-headline font-bold text-primary transition-all p-0 pb-2" placeholder="--" type="number"/>
+</div>
+<div>
+<label class="block text-xs font-label font-bold text-on-surface-variant uppercase tracking-tighter mb-2">Course Slope</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant/20 focus:border-tertiary focus:ring-0 text-sm font-body text-on-surface transition-all p-0 pb-1" placeholder="113" type="number"/>
+</div>
+</div>
+</div>
+<div class="glass-panel p-8 rounded-xl border border-outline-variant/10 hover:border-primary/30 transition-all group">
+<div class="flex justify-between items-start mb-6">
+<span class="text-3xl font-headline font-black text-outline-variant/30 group-hover:text-primary/40 transition-colors">05</span>
+<span class="material-symbols-outlined text-primary/50" data-icon="verified">verified</span>
+</div>
+<div class="space-y-4">
+<div>
+<label class="block text-xs font-label font-bold text-on-surface-variant uppercase tracking-tighter mb-2">Total Score</label>
+<input class="w-full bg-surface-container-lowest border-0 border-b-2 border-outline-variant/30 focus:border-tertiary focus:ring-0 text-2xl font-headline font-bold text-primary transition-all p-0 pb-2" placeholder="--" type="number"/>
+</div>
+<div>
+<label class="block text-xs font-label font-bold text-on-surface-variant uppercase tracking-tighter mb-2">Course Slope</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant/20 focus:border-tertiary focus:ring-0 text-sm font-body text-on-surface transition-all p-0 pb-1" placeholder="113" type="number"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Action Section -->
+<section class="max-w-4xl mx-auto">
+<div class="bg-surface-container-low rounded-3xl p-10 flex flex-col md:flex-row items-center justify-between gap-12 relative overflow-hidden">
+<div class="relative z-10 flex-1">
+<h3 class="font-headline text-2xl font-bold mb-3">Ready to calculate?</h3>
+<p class="font-body text-on-surface-variant text-base">Your entry will be validated against our fair-play algorithms. Final impact credits are awarded within 24 hours.</p>
+</div>
+<div class="relative z-10 flex gap-4 w-full md:w-auto">
+<button class="flex-1 md:flex-none px-10 py-4 bg-gradient-to-r from-primary to-primary-dim text-on-primary-container rounded-full font-headline font-extrabold tracking-wider hover:shadow-2xl hover:shadow-primary/40 hover:-translate-y-1 transition-all duration-300">
+                        SUBMIT SCORES
+                    </button>
+<button class="p-4 bg-surface-container-highest text-on-surface rounded-full hover:bg-surface-bright transition-colors">
+<span class="material-symbols-outlined" data-icon="refresh">refresh</span>
+</button>
+</div>
+<!-- Decorative element -->
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 blur-[100px] rounded-full -mr-20 -mt-20"></div>
+</div>
+</section>
+<!-- Info Grid -->
+<section class="mt-32 grid grid-cols-1 md:grid-cols-3 gap-12">
+<div class="space-y-6">
+<div class="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="volunteer_activism">volunteer_activism</span>
+</div>
+<h4 class="font-headline text-xl font-bold">Philanthropy Engine</h4>
+<p class="font-body text-on-surface-variant leading-relaxed">Each entry contributes to our current partner: <span class="text-tertiary">Ocean Restoration Project</span>. Higher consistency unlocks multiplier bonuses.</p>
+</div>
+<div class="space-y-6">
+<div class="w-12 h-12 bg-tertiary/10 rounded-2xl flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary" data-icon="monitoring">monitoring</span>
+</div>
+<h4 class="font-headline text-xl font-bold">Dynamic Adjustments</h4>
+<p class="font-body text-on-surface-variant leading-relaxed">Our system uses slope and rating to normalize impact across all difficulty levels. Play anywhere, contribute everywhere.</p>
+</div>
+<div class="space-y-6">
+<div class="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="shield_with_heart">shield_with_heart</span>
+</div>
+<h4 class="font-headline text-xl font-bold">Verified Impact</h4>
+<p class="font-body text-on-surface-variant leading-relaxed">Once submitted, your impact is recorded on the public ledger. Transparency is the core of Fairway Impact.</p>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="relative w-full pt-24 pb-12 bg-[#081329] dark:bg-[#081329]">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-20 px-24 max-w-[1920px] mx-auto">
+<div class="col-span-1 md:col-span-1">
+<div class="text-xl font-black text-[#dee5ff] mb-6">Fairway Impact</div>
+<p class="font-['Inter'] text-sm leading-relaxed text-[#dee5ff]/50">Elevating the game of golf through conscious contribution and community impact.</p>
+</div>
+<div>
+<h5 class="text-[#ffb95f] font-headline font-bold mb-6 text-sm uppercase tracking-widest">Platform</h5>
+<ul class="space-y-4 font-['Inter'] text-sm text-[#dee5ff]/50">
+<li><a class="hover:text-[#ffb95f] transition-colors duration-200 underline-offset-4 hover:underline" href="#">Impact Reports</a></li>
+<li><a class="hover:text-[#ffb95f] transition-colors duration-200 underline-offset-4 hover:underline" href="#">Charities</a></li>
+<li><a class="hover:text-[#ffb95f] transition-colors duration-200 underline-offset-4 hover:underline" href="#">Scores</a></li>
+<li><a class="hover:text-[#ffb95f] transition-colors duration-200 underline-offset-4 hover:underline" href="#">FAQ</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-[#ffb95f] font-headline font-bold mb-6 text-sm uppercase tracking-widest">Legal</h5>
+<ul class="space-y-4 font-['Inter'] text-sm text-[#dee5ff]/50">
+<li><a class="hover:text-[#ffb95f] transition-colors duration-200 underline-offset-4 hover:underline" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-[#ffb95f] transition-colors duration-200 underline-offset-4 hover:underline" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<h5 class="text-[#ffb95f] font-headline font-bold mb-6 text-sm uppercase tracking-widest">Connect</h5>
+<ul class="space-y-4 font-['Inter'] text-sm text-[#dee5ff]/50">
+<li><a class="hover:text-[#ffb95f] transition-colors duration-200 underline-offset-4 hover:underline" href="#">Support</a></li>
+<li><a class="hover:text-[#ffb95f] transition-colors duration-200 underline-offset-4 hover:underline" href="#">Careers</a></li>
+</ul>
+</div>
+</div>
+<div class="mt-20 pt-8 border-t border-outline-variant/10 text-center">
+<p class="font-['Inter'] text-xs text-[#dee5ff]/30">© 2024 Fairway Impact. All rights reserved.</p>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,10 @@
+{
+  "name": "gulf-chariity-root",
+  "private": true,
+  "scripts": {
+    "frontend:dev": "cd frontend && npm run dev",
+    "frontend:build": "cd frontend && npm run build",
+    "backend:deploy": "cd backend && echo 'Add deployment script here'",
+    "dev": "npm run frontend:dev"
+  }
+}

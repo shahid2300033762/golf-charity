@@ -1,0 +1,8 @@
+src/hooks/useAuth.tsx(49,73): error TS7006: Parameter '_event' implicitly has an 'any' type.
+src/pages/Dashboard.tsx(2,1): error TS6133: 'Button' is declared but its value is never read.
+src/pages/Dashboard.tsx(34,32): error TS6133: 'i' is declared but its value is never read.
+src/pages/Draws.tsx(1,1): error TS6192: All imports in import declaration are unused.
+src/pages/Scores.tsx(1,1): error TS6192: All imports in import declaration are unused.
+src/services/adminService.ts(18,44): error TS7006: Parameter 'acc' implicitly has an 'any' type.
+src/services/adminService.ts(18,49): error TS7006: Parameter 'curr' implicitly has an 'any' type.
+src/services/scoreService.ts(23,40): error TS7006: Parameter 's' implicitly has an 'any' type.

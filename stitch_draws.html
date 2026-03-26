@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-secondary-container": "#b192ff",
+            "error": "#fd6f85",
+            "tertiary-fixed": "#fea619",
+            "tertiary-container": "#fea619",
+            "on-secondary-fixed": "#4d00b7",
+            "inverse-on-surface": "#4d556b",
+            "on-tertiary": "#5c3800",
+            "on-surface": "#dee5ff",
+            "secondary-container": "#2f0076",
+            "on-primary-fixed": "#0c0090",
+            "surface-container-high": "#101e3e",
+            "background": "#060e20",
+            "primary-dim": "#6063ee",
+            "secondary": "#d0bcff",
+            "on-secondary-fixed-variant": "#6a37d4",
+            "surface-variant": "#142449",
+            "on-tertiary-fixed": "#311c00",
+            "tertiary": "#ffb95f",
+            "outline-variant": "#38476d",
+            "surface-tint": "#9093ff",
+            "outline": "#65759e",
+            "surface-container": "#0c1934",
+            "primary": "#9093ff",
+            "primary-fixed": "#babbff",
+            "surface": "#060e20",
+            "on-surface-variant": "#9baad6",
+            "surface-container-lowest": "#000000",
+            "surface-container-highest": "#142449",
+            "on-primary-container": "#000000",
+            "error-dim": "#c8475d",
+            "error-container": "#8a1632",
+            "on-primary": "#080079",
+            "surface-dim": "#060e20",
+            "surface-container-low": "#081329",
+            "surface-bright": "#172b54",
+            "on-background": "#dee5ff",
+            "on-tertiary-container": "#4f3000",
+            "inverse-surface": "#faf8ff",
+            "on-secondary": "#4e03b8",
+            "on-error": "#490013",
+            "secondary-fixed": "#e9ddff",
+            "secondary-dim": "#8455ef",
+            "on-primary-fixed-variant": "#2d2cbd",
+            "tertiary-dim": "#e79400",
+            "on-tertiary-fixed-variant": "#5b3800",
+            "inverse-primary": "#494bd7",
+            "primary-container": "#7073ff",
+            "primary-fixed-dim": "#aaacff",
+            "tertiary-fixed-dim": "#ee9800",
+            "secondary-fixed-dim": "#ddcdff",
+            "on-error-container": "#ff97a3"
+          },
+          fontFamily: {
+            "headline": ["Manrope"],
+            "body": ["Inter"],
+            "label": ["Inter"]
+          },
+          borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+<style>
+    body { font-family: 'Inter', sans-serif; }
+    .font-manrope { font-family: 'Manrope', sans-serif; }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      line-height: 1;
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface antialiased min-h-screen">
+<!-- TopNavBar Navigation Shell -->
+<nav class="fixed top-0 w-full z-50 bg-[#081329]/60 backdrop-blur-xl shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] bg-gradient-to-b from-[#101e3e]/20 to-transparent">
+<div class="flex justify-between items-center w-full px-12 py-4 max-w-none">
+<div class="text-2xl font-bold tracking-tighter text-[#9093ff] font-manrope">Fairway Impact</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-manrope tracking-wide uppercase text-sm font-semibold text-[#dee5ff]/70 hover:text-[#dee5ff] transition-colors duration-200" href="#">Home</a>
+<a class="font-manrope tracking-wide uppercase text-sm font-semibold text-[#dee5ff]/70 hover:text-[#dee5ff] transition-colors duration-200" href="#">Dashboard</a>
+<a class="font-manrope tracking-wide uppercase text-sm font-semibold text-[#dee5ff]/70 hover:text-[#dee5ff] transition-colors duration-200" href="#">Charities</a>
+<a class="font-manrope tracking-wide uppercase text-sm font-semibold text-[#dee5ff]/70 hover:text-[#dee5ff] transition-colors duration-200" href="#">Scores</a>
+<a class="font-manrope tracking-wide uppercase text-sm font-semibold text-[#9093ff] border-b-2 border-[#9093ff] pb-1" href="#">Draws</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="font-manrope tracking-wide uppercase text-sm font-semibold text-[#dee5ff]/70 hover:text-[#dee5ff] px-4 py-2 hover:bg-[#172b54]/50 rounded-lg transition-all duration-300">Sign In</button>
+<button class="font-manrope tracking-wide uppercase text-sm font-semibold bg-gradient-to-r from-primary to-primary-dim text-on-primary-container px-6 py-2.5 rounded-full ease-in-out duration-200 transform hover:scale-[1.02]">Join Club</button>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-24 px-6 md:px-12 lg:px-24">
+<!-- Hero Header -->
+<section class="mb-20 text-center">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-surface-container-high mb-6 border border-outline-variant/15">
+<span class="material-symbols-outlined text-tertiary text-sm" data-icon="stars" style="font-variation-settings: 'FILL' 1;">stars</span>
+<span class="text-xs font-bold tracking-widest uppercase text-on-surface-variant font-label">Official Draw Results</span>
+</div>
+<h1 class="text-5xl md:text-7xl font-extrabold font-headline tracking-tighter text-on-surface mb-6">November <span class="text-primary italic">Legacy</span> Draw</h1>
+<p class="text-lg text-on-surface-variant max-w-2xl mx-auto font-body">Where every swing contributes to the luminescent archive of global impact. Discover this month's champions.</p>
+</section>
+<!-- Results Bento Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-24">
+<!-- Winning Sequence Card -->
+<div class="lg:col-span-8 bg-surface-container-low rounded-3xl p-10 flex flex-col justify-between overflow-hidden relative group border border-outline-variant/10">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-50"></div>
+<div class="relative z-10">
+<div class="flex justify-between items-start mb-12">
+<div>
+<h2 class="text-3xl font-bold font-headline mb-2 text-on-surface">Winning Sequence</h2>
+<p class="text-on-surface-variant text-sm font-body">Certified by Luminescent Ledger Protocol</p>
+</div>
+<div class="text-right">
+<span class="block text-2xl font-bold font-headline text-tertiary">$25,000</span>
+<span class="text-xs uppercase tracking-widest text-on-surface-variant">Grand Prize Pool</span>
+</div>
+</div>
+<div class="flex flex-wrap gap-4 md:gap-6 justify-center md:justify-start mb-12">
+<!-- Numbers -->
+<div class="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-surface-bright flex items-center justify-center border border-primary/20 shadow-[0_0_20px_rgba(144,147,255,0.1)] transform hover:scale-110 transition-transform duration-300">
+<span class="text-3xl md:text-4xl font-bold font-headline text-primary">08</span>
+</div>
+<div class="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-surface-bright flex items-center justify-center border border-primary/20 shadow-[0_0_20px_rgba(144,147,255,0.1)] transform hover:scale-110 transition-transform duration-300">
+<span class="text-3xl md:text-4xl font-bold font-headline text-primary">14</span>
+</div>
+<div class="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-surface-bright flex items-center justify-center border border-primary/20 shadow-[0_0_20px_rgba(144,147,255,0.1)] transform hover:scale-110 transition-transform duration-300">
+<span class="text-3xl md:text-4xl font-bold font-headline text-primary">22</span>
+</div>
+<div class="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-surface-bright flex items-center justify-center border border-primary/20 shadow-[0_0_20px_rgba(144,147,255,0.1)] transform hover:scale-110 transition-transform duration-300">
+<span class="text-3xl md:text-4xl font-bold font-headline text-primary">31</span>
+</div>
+<div class="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-surface-bright flex items-center justify-center border border-primary/20 shadow-[0_0_20px_rgba(144,147,255,0.1)] transform hover:scale-110 transition-transform duration-300">
+<span class="text-3xl md:text-4xl font-bold font-headline text-primary">45</span>
+</div>
+<div class="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-tertiary/10 flex items-center justify-center border border-tertiary/30 shadow-[0_0_25px_rgba(255,185,95,0.15)] transform hover:scale-110 transition-transform duration-300">
+<span class="text-3xl md:text-4xl font-bold font-headline text-tertiary">02</span>
+</div>
+</div>
+</div>
+<div class="relative z-10 flex items-center gap-4 pt-6 border-t border-outline-variant/10">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="schedule">schedule</span>
+<p class="text-sm text-on-surface-variant font-body">Draw finalized on Nov 15, 2024 • 18:00 UTC</p>
+</div>
+</div>
+<!-- User Status Card -->
+<div class="lg:col-span-4 bg-surface-container-high rounded-3xl p-10 flex flex-col justify-between border border-outline-variant/10 overflow-hidden relative">
+<div class="absolute -right-10 -top-10 w-40 h-40 bg-primary/10 rounded-full blur-3xl"></div>
+<div class="relative z-10">
+<div class="w-14 h-14 rounded-2xl bg-surface-bright flex items-center justify-center mb-8">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="account_circle">account_circle</span>
+</div>
+<h3 class="text-2xl font-bold font-headline text-on-surface mb-2">Your Status</h3>
+<p class="text-on-surface-variant font-body mb-8">Member ID: #FI-8829</p>
+<div class="p-6 rounded-2xl bg-surface-container-lowest border border-outline-variant/10 mb-6">
+<div class="flex items-center gap-3 mb-2">
+<span class="material-symbols-outlined text-error" data-icon="sentiment_dissatisfied">sentiment_dissatisfied</span>
+<span class="text-on-surface font-semibold font-headline uppercase text-xs tracking-wider">No Match Found</span>
+</div>
+<p class="text-sm text-on-surface-variant font-body leading-relaxed">Your sequence (07, 12, 22, 29, 41, 05) was close! Your participation this month contributed $12.50 to Water.org.</p>
+</div>
+</div>
+<button class="relative z-10 w-full py-4 rounded-xl bg-surface-bright text-on-surface font-bold font-headline hover:bg-primary/20 transition-all duration-300 flex items-center justify-center gap-2">
+          View My Tickets
+          <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Impact & Top Givers Section -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+<!-- Top Impact Makers List -->
+<section>
+<div class="flex items-center justify-between mb-10">
+<h2 class="text-3xl font-bold font-headline text-on-surface">Impact Pioneers</h2>
+<a class="text-sm font-bold text-primary hover:text-primary-dim transition-colors font-label uppercase tracking-widest" href="#">All Members</a>
+</div>
+<div class="space-y-4">
+<!-- Item 1 -->
+<div class="group flex items-center justify-between p-5 rounded-2xl bg-surface-container-low border border-transparent hover:border-outline-variant/20 hover:bg-surface-container-high transition-all duration-300">
+<div class="flex items-center gap-5">
+<div class="w-12 h-12 rounded-full overflow-hidden border-2 border-primary/20">
+<img class="w-full h-full object-cover" data-alt="professional portrait of a man with silver hair and glasses looking confident" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBP-eVQnOj494XRPy4xehkmP0YExoduF_UgH5VQV8FnTNchY7SGg7vaT1dA78XXP-xTNJf-whvbyYhassI0GFfalY40cy_qmTZo_wa7DwrnJCc4y6FGQfzXF4MvpfMixDO5eZRwix66mztpkO2JHmPKehamM3p0PjjjbtG_9dq8I7h--GriFI1OswW9k8_YqQo_I8IHQeloZVXg4nZnzDCRDewJU_mzSUIXi_bmo3z4iADw24IiywrOyy_kBrXCQBvh_LzCBihgME5V"/>
+</div>
+<div>
+<h4 class="font-bold text-on-surface font-headline">Marcus V. Sterling</h4>
+<p class="text-xs text-on-surface-variant font-body">Platinum Contributor</p>
+</div>
+</div>
+<div class="text-right">
+<span class="block font-bold text-tertiary font-headline">$4,250</span>
+<span class="text-[10px] uppercase tracking-tighter text-on-surface-variant">Trees Planted: 1,200</span>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="group flex items-center justify-between p-5 rounded-2xl bg-surface-container-low border border-transparent hover:border-outline-variant/20 hover:bg-surface-container-high transition-all duration-300">
+<div class="flex items-center gap-5">
+<div class="w-12 h-12 rounded-full overflow-hidden border-2 border-primary/20">
+<img class="w-full h-full object-cover" data-alt="vibrant portrait of a woman with a warm smile in natural outdoor light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlQEKfxAT_taCucZIF0Rai8-z0_3d0MxaxJd5b4-t4vMhiJOYg9fpLtxuC7ev5uKLz2P4yRA7Algcu02qVh4VZH4qY3GhTHe7sgCIqTO6odQr2Mazhmr8AVOtseUwrB2ThOl_YxWBpd9WOYlmU9U5SdEGjjZwfo9_TeU562znKbNGVMbr2UYFhWK5iHX_bdrurwDadK6Edz8bfjYLAsPhIOry5OIVFuNOHA4QpAmkZiJKiAijyEmPKjy3nDPCbgq0RpsHmaWKIUQap"/>
+</div>
+<div>
+<h4 class="font-bold text-on-surface font-headline">Elena Rodriguez</h4>
+<p class="text-xs text-on-surface-variant font-body">Impact Legend</p>
+</div>
+</div>
+<div class="text-right">
+<span class="block font-bold text-tertiary font-headline">$3,890</span>
+<span class="text-[10px] uppercase tracking-tighter text-on-surface-variant">Clean Water: 4 Villages</span>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="group flex items-center justify-between p-5 rounded-2xl bg-surface-container-low border border-transparent hover:border-outline-variant/20 hover:bg-surface-container-high transition-all duration-300">
+<div class="flex items-center gap-5">
+<div class="w-12 h-12 rounded-full overflow-hidden border-2 border-primary/20">
+<img class="w-full h-full object-cover" data-alt="headshot of a young professional man with a neat beard and stylish haircut" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaAxWFxEI8xRuT9q4vIMpjEHubjOXAqpKT3WRGAVrfUwh4_Kb8NIYbqrPLHW3OAV6NWZxTkAWweJIi33IH3kcLRGSQ12BlapsiRVdRM2vtIfSsIURtuGx9A1D6Dmzt8ItUQm7gWQi2tJ1raTMVtTd4JA9PeHfP5bug9SFsfWPSjwfCigb3AKKadMkPsPEddvy1THmFNuPWEI6J4jnWhI6e-D79D5MG75lkpo00lLDurjHXqr21eHRoqg3rnQG491skvFl_5Nca-z9p"/>
+</div>
+<div>
+<h4 class="font-bold text-on-surface font-headline">Jameson Blake</h4>
+<p class="text-xs text-on-surface-variant font-body">Monthly Champion</p>
+</div>
+</div>
+<div class="text-right">
+<span class="block font-bold text-tertiary font-headline">$2,100</span>
+<span class="text-[10px] uppercase tracking-tighter text-on-surface-variant">Medical Kits: 85</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Monthly Impact Story Card -->
+<section class="bg-surface-container-low rounded-3xl overflow-hidden flex flex-col border border-outline-variant/10">
+<div class="h-64 relative">
+<img class="w-full h-full object-cover" data-alt="wide shot of a vast reforestation project with thousands of small green saplings planted in rows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUDmq4yUhHUCwpTV38NGugWx2xultIk9WMblw5-YF6_k4kBcu5scPh_zBBGfUWv80wjVMIjA24B2fmDg3hhz0nkwKc-hBq-iGNCCKbu6UpoQf2zb4jhpVxzGiwDjdYXu1zt-3_gTXWZ8gh0A1Oe5mTUl8P-C_Ax5s25un3N-JXwQMEOiCdl2Pf9Q5oJ1HcrxqTbOQ2_uCAJo0j_qzGYzmOTHM83hHT7g2N--_mExVPVv9H0B4PTfinqbnHp83MGQuh4qam2UdIeGcT"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-low to-transparent"></div>
+<div class="absolute bottom-6 left-8">
+<span class="bg-tertiary text-on-tertiary px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest mb-2 inline-block">November Success Story</span>
+<h3 class="text-2xl font-bold font-headline text-on-surface">The Amazon Corridor</h3>
+</div>
+</div>
+<div class="p-8 flex-1 flex flex-col justify-between">
+<p class="text-on-surface-variant font-body leading-relaxed mb-8">
+            This month, the Fairway Impact community collective contribution reached its milestone. We've officially funded the protection of 40,000 acres of rainforest, preventing carbon emissions equivalent to 12,000 cars annually.
+          </p>
+<div class="space-y-4">
+<div class="flex justify-between text-xs font-bold font-label uppercase tracking-widest text-on-surface-variant">
+<span>Goal Progress</span>
+<span class="text-primary">94% Achieved</span>
+</div>
+<div class="w-full h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary shadow-[0_0_10px_rgba(144,147,255,0.8)]" style="width: 94%;"></div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-[#060e20] w-full border-t border-[#9093ff]/10">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 px-20 py-24 w-full">
+<div>
+<div class="font-manrope text-lg font-bold text-[#dee5ff] mb-6">Fairway Impact</div>
+<p class="font-inter text-sm antialiased text-[#dee5ff]/60 leading-relaxed mb-6">
+          The Luminescent Archive of Giving. Redefining subscription-based philanthropy through transparency and sport.
+        </p>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-[#dee5ff]/40 hover:text-[#9093ff] transition-colors cursor-pointer" data-icon="public">public</span>
+<span class="material-symbols-outlined text-[#dee5ff]/40 hover:text-[#9093ff] transition-colors cursor-pointer" data-icon="share">share</span>
+<span class="material-symbols-outlined text-[#dee5ff]/40 hover:text-[#9093ff] transition-colors cursor-pointer" data-icon="mail">mail</span>
+</div>
+</div>
+<div>
+<h4 class="font-manrope text-sm font-bold text-[#dee5ff] uppercase tracking-widest mb-6">Platform</h4>
+<ul class="space-y-4">
+<li><a class="font-inter text-sm text-[#dee5ff]/50 hover:text-[#9093ff] transition-colors duration-300" href="#">How It Works</a></li>
+<li><a class="font-inter text-sm text-[#dee5ff]/50 hover:text-[#9093ff] transition-colors duration-300" href="#">Impact Report</a></li>
+<li><a class="font-inter text-sm text-[#dee5ff]/50 hover:text-[#9093ff] transition-colors duration-300" href="#">Charity Partners</a></li>
+<li><a class="font-inter text-sm text-[#dee5ff]/50 hover:text-[#9093ff] transition-colors duration-300" href="#">Past Results</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-manrope text-sm font-bold text-[#dee5ff] uppercase tracking-widest mb-6">Support</h4>
+<ul class="space-y-4">
+<li><a class="font-inter text-sm text-[#dee5ff]/50 hover:text-[#9093ff] transition-colors duration-300" href="#">Contact Support</a></li>
+<li><a class="font-inter text-sm text-[#dee5ff]/50 hover:text-[#9093ff] transition-colors duration-300" href="#">Partner With Us</a></li>
+<li><a class="font-inter text-sm text-[#dee5ff]/50 hover:text-[#9093ff] transition-colors duration-300" href="#">Privacy Policy</a></li>
+<li><a class="font-inter text-sm text-[#dee5ff]/50 hover:text-[#9093ff] transition-colors duration-300" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-manrope text-sm font-bold text-[#dee5ff] uppercase tracking-widest mb-6">Newsletter</h4>
+<p class="font-inter text-xs text-[#dee5ff]/40 mb-4">Stay updated with our latest impact stories.</p>
+<div class="flex">
+<input class="bg-[#101e3e] border-none rounded-l-lg text-sm text-[#dee5ff] focus:ring-1 focus:ring-[#9093ff] w-full py-2" placeholder="Email address" type="email"/>
+<button class="bg-[#172b54] text-[#dee5ff] px-4 rounded-r-lg hover:bg-[#9093ff] hover:text-[#060e20] transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="send">send</span>
+</button>
+</div>
+</div>
+</div>
+<div class="px-20 py-8 border-t border-[#9093ff]/5 text-center">
+<p class="font-inter text-xs antialiased text-[#dee5ff]/40">© 2024 Fairway Impact. The Luminescent Archive of Giving.</p>
+</div>
+</footer>
+</body></html>

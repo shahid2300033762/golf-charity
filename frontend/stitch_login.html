@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-dim": "#060e20",
+              "on-primary-container": "#000000",
+              "on-primary": "#080079",
+              "on-error-container": "#ff97a3",
+              "on-secondary": "#4e03b8",
+              "tertiary-fixed": "#fea619",
+              "tertiary-dim": "#e79400",
+              "surface-variant": "#142449",
+              "on-secondary-fixed": "#4d00b7",
+              "tertiary-container": "#fea619",
+              "error-container": "#8a1632",
+              "secondary-fixed-dim": "#ddcdff",
+              "outline-variant": "#38476d",
+              "secondary-dim": "#8455ef",
+              "surface-container-high": "#101e3e",
+              "background": "#060e20",
+              "on-primary-fixed-variant": "#2d2cbd",
+              "secondary-container": "#2f0076",
+              "on-background": "#dee5ff",
+              "outline": "#65759e",
+              "surface-bright": "#172b54",
+              "error-dim": "#c8475d",
+              "primary-dim": "#6063ee",
+              "surface-container-highest": "#142449",
+              "primary-container": "#7073ff",
+              "inverse-surface": "#faf8ff",
+              "on-tertiary-fixed": "#311c00",
+              "surface": "#060e20",
+              "on-surface-variant": "#9baad6",
+              "inverse-on-surface": "#4d556b",
+              "on-tertiary-container": "#4f3000",
+              "error": "#fd6f85",
+              "surface-container-lowest": "#000000",
+              "primary-fixed": "#babbff",
+              "primary-fixed-dim": "#aaacff",
+              "on-surface": "#dee5ff",
+              "surface-container-low": "#081329",
+              "inverse-primary": "#494bd7",
+              "secondary-fixed": "#e9ddff",
+              "surface-container": "#0c1934",
+              "on-tertiary": "#5c3800",
+              "on-tertiary-fixed-variant": "#5b3800",
+              "surface-tint": "#9093ff",
+              "tertiary-fixed-dim": "#ee9800",
+              "primary": "#9093ff",
+              "secondary": "#d0bcff",
+              "on-secondary-container": "#b192ff",
+              "on-error": "#490013",
+              "on-primary-fixed": "#0c0090",
+              "tertiary": "#ffb95f",
+              "on-secondary-fixed-variant": "#6a37d4"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(16, 30, 62, 0.6);
+            backdrop-filter: blur(24px);
+            border: 1px solid rgba(144, 147, 255, 0.1);
+        }
+        .light-trail-bg {
+            background: radial-gradient(circle at 50% 50%, #101e3e 0%, #060e20 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .ethereal-glow {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(144, 147, 255, 0.15) 0%, transparent 70%);
+            filter: blur(60px);
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary/30 min-h-screen flex flex-col">
+<!-- Top Navigation Suppression: Not rendered per Rule (Transactional Page) -->
+<main class="flex-grow relative flex items-center justify-center py-20 px-6 light-trail-bg">
+<!-- Background Ethereal Elements -->
+<div class="ethereal-glow -top-20 -left-20"></div>
+<div class="ethereal-glow bottom-0 right-0" style="background: radial-gradient(circle, rgba(255, 185, 95, 0.08) 0%, transparent 70%);"></div>
+<!-- Main Auth Shell -->
+<div class="w-full max-w-5xl grid md:grid-cols-2 glass-card rounded-3xl overflow-hidden shadow-[0_32px_64px_-12px_rgba(0,0,0,0.6)] z-10">
+<!-- Left Side: Visual/Branding -->
+<div class="hidden md:flex flex-col justify-between p-12 bg-surface-container-low relative overflow-hidden">
+<div class="z-10">
+<h1 class="font-headline text-3xl font-extrabold tracking-tighter text-primary mb-2">Fairway Impact</h1>
+<p class="text-on-surface-variant font-medium tracking-wide text-sm uppercase">The Luminescent Archive of Giving</p>
+</div>
+<div class="z-10">
+<blockquote class="mb-8">
+<p class="font-headline text-2xl font-light leading-relaxed text-on-surface italic">
+                            "True impact is not measured in numbers, but in the light we leave behind."
+                        </p>
+</blockquote>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full overflow-hidden bg-surface-bright border border-outline-variant/30">
+<img alt="Profile avatar" class="w-full h-full object-cover" data-alt="Portrait of a sophisticated philanthropist in a modern gallery setting with soft cinematic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQsDWQRamcbyjO67J4QlXr6kBnOxVEc8vXqqQvCkCV1v6SIt_8fRMp8-wr2GlFCGwC7hlm4FUgvGUUwGz95M7sFBD8m0QaoadmQpNpL1bSm1H-iqVXbelaFb_Vmqf7Ec0e4Am7eZ3k8IEfzxrF6V4inm-XFfk1uGcRS2YPyQVdGY3SjGStDEXPjycwPpztf0WGkeF5EdEzbX5JqtNmyG478tUi3M5cOrQtIcLwTYwkZ70wP2GtpXVonwRmmgXY4xxMrX7bTi3iK0iz"/>
+</div>
+<div>
+<p class="text-sm font-semibold text-on-surface">Elena Vance</p>
+<p class="text-xs text-on-surface-variant">Global Impact Director</p>
+</div>
+</div>
+</div>
+<!-- Abstract Visual Decor -->
+<div class="absolute inset-0 opacity-20 pointer-events-none">
+<div class="absolute top-0 right-0 w-full h-full bg-gradient-to-bl from-primary/20 via-transparent to-transparent"></div>
+<img alt="Abstract texture" class="w-full h-full object-cover mix-blend-overlay" data-alt="Abstract ethereal light trails flowing diagonally across a deep indigo void with micro-particles and soft violet bokeh" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDO-gQFyKx9vsEWR3cf6wh4BpQlZwhSJlU8fBjZSVbTMyi0q74YbNywKDBR8T1hjjoSUN4DaMp5TVZ8rYohwlAAhoO0VKThyj6xGiUfZmp8RCa5zk3A6rJ2K2Z4zEKlQCH8Eof4bb1rhEt6Ezp_4nrui51OCaeViStOY-k2ze6AVErXOQVuiYoWyqWmQ3jq-_cXq3jYUfwB1BXPic8YOf4V5Sal3VvTfDMwricMbjX-Cjt5AmzpNRcjBkPBpkuFwwEqbIKKvbliVuWE"/>
+</div>
+</div>
+<!-- Right Side: Interaction -->
+<div class="p-8 md:p-12 lg:p-16 flex flex-col justify-center bg-surface-container/40">
+<div class="mb-10 flex border-b border-outline-variant/10">
+<button class="pb-4 pr-8 text-primary font-headline font-bold text-lg border-b-2 border-primary transition-all duration-300">Sign In</button>
+<button class="pb-4 pr-8 text-on-surface-variant font-headline font-bold text-lg hover:text-on-surface transition-all duration-300">Join Club</button>
+</div>
+<div class="space-y-6">
+<div class="space-y-2">
+<label class="block text-xs font-bold tracking-widest text-on-surface-variant uppercase ml-1">Email Address</label>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline-variant group-focus-within:text-tertiary transition-colors">mail</span>
+<input class="w-full bg-surface-container-lowest/50 border-0 border-b border-outline-variant/30 py-4 pl-12 pr-4 text-on-surface placeholder:text-outline focus:ring-0 focus:border-tertiary transition-all outline-none rounded-t-lg" placeholder="name@archive.com" type="email"/>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-center px-1">
+<label class="block text-xs font-bold tracking-widest text-on-surface-variant uppercase">Password</label>
+<a class="text-[10px] font-bold tracking-tighter uppercase text-primary hover:text-primary-fixed transition-colors" href="#">Forgot Access?</a>
+</div>
+<div class="relative group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline-variant group-focus-within:text-tertiary transition-colors">lock</span>
+<input class="w-full bg-surface-container-lowest/50 border-0 border-b border-outline-variant/30 py-4 pl-12 pr-4 text-on-surface placeholder:text-outline focus:ring-0 focus:border-tertiary transition-all outline-none rounded-t-lg" placeholder="••••••••" type="password"/>
+</div>
+</div>
+<div class="flex items-center gap-3 py-2">
+<input class="w-5 h-5 rounded border-outline-variant bg-surface-container-high text-primary focus:ring-primary/20 focus:ring-offset-0" id="remember" type="checkbox"/>
+<label class="text-sm text-on-surface-variant cursor-pointer select-none" for="remember">Maintain session for 30 days</label>
+</div>
+<button class="w-full py-5 bg-gradient-to-r from-primary to-primary-dim text-on-primary-container font-headline font-extrabold uppercase tracking-widest rounded-full shadow-lg shadow-primary/20 hover:scale-[1.01] active:scale-[0.99] transition-all duration-300 mt-4 group">
+<span class="flex items-center justify-center gap-2">
+                            Enter Archive
+                            <span class="material-symbols-outlined text-xl group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</span>
+</button>
+<div class="relative py-4 flex items-center">
+<div class="flex-grow border-t border-outline-variant/10"></div>
+<span class="px-4 text-[10px] font-bold text-on-surface-variant tracking-[0.2em] uppercase">Identity Verification</span>
+<div class="flex-grow border-t border-outline-variant/10"></div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<button class="flex items-center justify-center gap-3 py-3 px-4 rounded-full bg-surface-container-highest/40 border border-outline-variant/10 hover:bg-surface-container-highest transition-all duration-300">
+<img alt="Google" class="w-5 h-5 opacity-80" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKe1TNP7TNSuaa5BJlbXNFVwDGcUrJcfCt6WpeBEYy46LoCOCebF78rJN7QySUS0opVTEacAu6smiLt44EmjVNs-ZJ6bwhy0-aO8DPcTdVYYm2DsoyJhJdbuSJkTlO_h9mvFDIMCGOqpSaZFXLt7uF1ejxMOAZwEiwBUXp4_v6CyxtMGp5lS5yrlQIegjEE6NJ-Vsf19u_D64oWEAUHBeoH9hmlXGa1D_A93PMiLfSF4Equj8xUpB1gfuGx0aKdzMpXWr7manIjrA2"/>
+<span class="text-sm font-semibold text-on-surface">Google</span>
+</button>
+<button class="flex items-center justify-center gap-3 py-3 px-4 rounded-full bg-surface-container-highest/40 border border-outline-variant/10 hover:bg-surface-container-highest transition-all duration-300">
+<span class="material-symbols-outlined text-xl text-on-surface/80" style="font-variation-settings: 'FILL' 1;">ios</span>
+<span class="text-sm font-semibold text-on-surface">Apple</span>
+</button>
+</div>
+</div>
+<p class="mt-12 text-center text-xs text-on-surface-variant">
+                    By accessing the archive, you agree to our 
+                    <a class="text-on-surface hover:text-primary underline decoration-primary/30 underline-offset-4" href="#">Terms of Sovereignty</a> 
+                    and 
+                    <a class="text-on-surface hover:text-primary underline decoration-primary/30 underline-offset-4" href="#">Privacy Mandate</a>.
+                </p>
+</div>
+</div>
+</main>
+<!-- Footer Component as per JSON -->
+<footer class="w-full border-t border-[#9093ff]/10 bg-[#060e20]">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 px-20 py-24 w-full">
+<div class="space-y-6">
+<div class="font-manrope text-lg font-bold text-[#dee5ff]">Fairway Impact</div>
+<p class="font-inter text-sm antialiased text-[#dee5ff]/60 leading-relaxed max-w-xs">
+                    Curating a digital heritage of global generosity through cinematic impact storytelling and transparent archive management.
+                </p>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-[#ffb95f] font-headline font-bold uppercase tracking-widest text-xs mb-2">Explore</h4>
+<a class="text-[#dee5ff]/50 hover:text-[#9093ff] transition-colors duration-300 text-sm" href="#">Impact Report</a>
+<a class="text-[#dee5ff]/50 hover:text-[#9093ff] transition-colors duration-300 text-sm" href="#">Partner With Us</a>
+<a class="text-[#dee5ff]/50 hover:text-[#9093ff] transition-colors duration-300 text-sm" href="#">Charity Registry</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-[#ffb95f] font-headline font-bold uppercase tracking-widest text-xs mb-2">Legal</h4>
+<a class="text-[#dee5ff]/50 hover:text-[#9093ff] transition-colors duration-300 text-sm" href="#">Privacy Policy</a>
+<a class="text-[#dee5ff]/50 hover:text-[#9093ff] transition-colors duration-300 text-sm" href="#">Terms of Service</a>
+<a class="text-[#dee5ff]/50 hover:text-[#9093ff] transition-colors duration-300 text-sm" href="#">Data Security</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-[#ffb95f] font-headline font-bold uppercase tracking-widest text-xs mb-2">Support</h4>
+<a class="text-[#dee5ff]/50 hover:text-[#9093ff] transition-colors duration-300 text-sm" href="#">Contact Support</a>
+<a class="text-[#dee5ff]/50 hover:text-[#9093ff] transition-colors duration-300 text-sm" href="#">Help Center</a>
+<div class="flex gap-4 mt-4">
+<span class="material-symbols-outlined text-[#dee5ff]/40 hover:text-[#9093ff] cursor-pointer transition-colors">public</span>
+<span class="material-symbols-outlined text-[#dee5ff]/40 hover:text-[#9093ff] cursor-pointer transition-colors">hub</span>
+<span class="material-symbols-outlined text-[#dee5ff]/40 hover:text-[#9093ff] cursor-pointer transition-colors">assured_workload</span>
+</div>
+</div>
+</div>
+<div class="px-20 py-8 border-t border-[#9093ff]/5 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-inter text-sm antialiased text-[#dee5ff]/60">© 2024 Fairway Impact. The Luminescent Archive of Giving.</p>
+<div class="flex gap-8">
+<span class="text-[10px] uppercase tracking-widest text-[#dee5ff]/30">V. 4.0.2</span>
+<span class="text-[10px] uppercase tracking-widest text-[#dee5ff]/30">Status: Operational</span>
+</div>
+</div>
+</footer>
+</body></html>
