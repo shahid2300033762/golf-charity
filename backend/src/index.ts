@@ -17,6 +17,11 @@ const port = process.env.PORT || 3001;
 app.use(cors());
 app.use(express.json());
 
+// Root Entry
+app.get('/', (req: Request, res: Response) => {
+  res.send('Sovereign API Online. Use /api/health for system status.');
+});
+
 // Basic Health Check
 app.get('/api/health', (req: Request, res: Response) => {
   res.json({ 
