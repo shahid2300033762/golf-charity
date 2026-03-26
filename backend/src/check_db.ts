@@ -1,6 +1,10 @@
 import { supabaseAdmin } from './supabase';
 
 async function check() {
+  if (!supabaseAdmin) {
+    console.error('Supabase Admin NOT initialized. Check VITE_SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY.');
+    return;
+  }
   try {
     const { data: subs, error: subError } = await supabaseAdmin.from('subscriptions').select('*');
     const { data: users, error: userError } = await supabaseAdmin.from('users').select('*');
