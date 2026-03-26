@@ -12,11 +12,30 @@ export default function Subscribe() {
   const [contribution, setContribution] = useState<number>(10);
 
   useEffect(() => {
-    const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
-    fetch(`${API_URL}/api/charities`)
-      .then(res => res.json())
-      .then(setCharities)
-      .catch(console.error);
+    const fetchCharities = async () => {
+      try {
+        const API_URL = import.meta.env.VITE_API_URL || '';
+        const res = await fetch(`${API_URL}/api/charities`);
+        
+        if (!res.ok) {
+          throw new Error(`API Error: ${res.status} ${res.statusText}`);
+        }
+
+        const contentType = res.headers.get('content-type');
+        if (contentType && contentType.includes('application/json')) {
+          const data = await res.json();
+          setCharities(data);
+        } else {
+          const text = await res.text();
+          console.error('Expected JSON but received:', text.substring(0, 100));
+          throw new Error('Could not connect to the Backend API. Check your VITE_API_URL in Vercel settings.');
+        }
+      } catch (err: any) {
+        console.error('Fetch error:', err);
+        setError(`System Error: ${err.message}`);
+      }
+    };
+    fetchCharities();
   }, []);
 
   const handleSubscribe = async () => {

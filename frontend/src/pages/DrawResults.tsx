@@ -67,12 +67,16 @@ export default function DrawResults() {
         }
 
         // 4. Fetch user winnings history
-        const res = await fetch('http://localhost:3001/api/winners/my-winnings', {
+        const API_URL = import.meta.env.VITE_API_URL || '';
+        const res = await fetch(`${API_URL}/api/winners/my-winnings`, {
           headers: { 'Authorization': `Bearer ${session.access_token}` }
         });
         if (res.ok) {
-          const data = await res.json();
-          setWinnings(data.winnings || []);
+          const contentType = res.headers.get('content-type');
+          if (contentType && contentType.includes('application/json')) {
+            const data = await res.json();
+            setWinnings(data.winnings || []);
+          }
         }
       }
     } catch (e) {

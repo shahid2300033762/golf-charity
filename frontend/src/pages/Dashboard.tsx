@@ -29,20 +29,27 @@ export default function Dashboard() {
       const { data: { session } } = await supabase.auth.getSession();
       const headers = { 'Authorization': `Bearer ${session?.access_token}` };
 
+      const API_URL = import.meta.env.VITE_API_URL || '';
       const [scoresRes, subRes, charitiesRes, donationsRes] = await Promise.all([
-        fetch('http://localhost:3001/api/scores', { headers }),
-        fetch('http://localhost:3001/api/subscriptions/status', { headers }),
-        fetch('http://localhost:3001/api/charities'),
+        fetch(`${API_URL}/api/scores`, { headers }),
+        fetch(`${API_URL}/api/subscriptions/status`, { headers }),
+        fetch(`${API_URL}/api/charities`),
         supabase.from('donations').select('amount, created_at').eq('user_id', user.id)
       ]);
 
       if (scoresRes.ok) {
-        const data = await scoresRes.json();
-        setScores(data.scores || []);
+        const contentType = scoresRes.headers.get('content-type');
+        if (contentType && contentType.includes('application/json')) {
+          const data = await scoresRes.json();
+          setScores(data.scores || []);
+        }
       }
       if (subRes.ok) {
-        const data = await subRes.json();
-        setSubscription(data.subscription);
+        const contentType = subRes.headers.get('content-type');
+        if (contentType && contentType.includes('application/json')) {
+          const data = await subRes.json();
+          setSubscription(data.subscription);
+        }
       }
       
       const allDonations = donationsRes.data || [];
@@ -59,10 +66,13 @@ export default function Dashboard() {
       });
 
       if (charitiesRes.ok) {
-        const data = await charitiesRes.json();
-        const metadata = user.id ? (await supabase.auth.getUser()).data.user?.user_metadata : {};
-        const charityId = metadata?.charity_id || '1';
-        setCharity(data.find((c: any) => c.id === charityId) || data[0]);
+        const contentType = charitiesRes.headers.get('content-type');
+        if (contentType && contentType.includes('application/json')) {
+          const data = await charitiesRes.json();
+          const metadata = user.id ? (await supabase.auth.getUser()).data.user?.user_metadata : {};
+          const charityId = metadata?.charity_id || '1';
+          setCharity(data.find((c: any) => c.id === charityId) || data[0]);
+        }
       }
     } catch (err) {
       console.error('Dashboard fetch error:', err);

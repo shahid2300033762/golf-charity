@@ -15,22 +15,27 @@ export default function Scores() {
   const [submitLoading, setSubmitLoading] = useState(false);
   const [error, setError] = useState('');
 
-  const fetchScores = async () => {
-    try {
-      const { data: { session } } = await supabase.auth.getSession();
-      const res = await fetch('http://localhost:3001/api/scores', {
-        headers: { 'Authorization': `Bearer ${session?.access_token}` }
-      });
-      if (res.ok) {
+const fetchScores = async () => {
+  try {
+    const { data: { session } } = await supabase.auth.getSession();
+    const API_URL = import.meta.env.VITE_API_URL || '';
+    const res = await fetch(`${API_URL}/api/scores`, {
+      headers: { 'Authorization': `Bearer ${session?.access_token}` }
+    });
+    
+    if (res.ok) {
+      const contentType = res.headers.get('content-type');
+      if (contentType && contentType.includes('application/json')) {
         const data = await res.json();
         setScores(data.scores || []);
       }
-    } catch (err) {
-      console.error('Failed to fetch scores:', err);
-    } finally {
-      setLoading(false);
     }
-  };
+  } catch (err) {
+    console.error('Failed to fetch scores:', err);
+  } finally {
+    setLoading(false);
+  }
+};
 
   useEffect(() => {
     fetchScores();
@@ -46,7 +51,8 @@ export default function Scores() {
 
     try {
       const { data: { session } } = await supabase.auth.getSession();
-      const res = await fetch('http://localhost:3001/api/scores', {
+      const API_URL = import.meta.env.VITE_API_URL || '';
+      const res = await fetch(`${API_URL}/api/scores`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -56,8 +62,13 @@ export default function Scores() {
       });
 
       if (!res.ok) {
-        const errData = await res.json();
-        throw new Error(errData.error || 'Failed to submit score');
+        const contentType = res.headers.get('content-type');
+        let errMsg = 'Failed to submit score';
+        if (contentType && contentType.includes('application/json')) {
+          const errData = await res.json();
+          errMsg = errData.error || errMsg;
+        }
+        throw new Error(errMsg);
       }
 
       setNewScore('');
