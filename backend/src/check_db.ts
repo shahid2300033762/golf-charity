@@ -1,4 +1,4 @@
-import { supabaseAdmin } from './src/supabase';
+import { supabaseAdmin } from './supabase';
 
 async function check() {
   try {
