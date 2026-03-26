@@ -170,7 +170,7 @@ export default function Landing() {
                   src="/images/success_maya.png" 
                   alt="Child smiling" 
                   loading="lazy"
-                  className="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-all duration-1000 ease-out"
+                  className="w-full h-full object-cover opacity-90 grayscale group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-1000 ease-out"
                 />
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-[#060e20] via-transparent to-transparent"></div>
@@ -207,7 +207,7 @@ export default function Landing() {
                   src="/images/success_classroom.png" 
                   alt="Water stream" 
                   loading="lazy"
-                  className="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-all duration-1000 ease-out"
+                  className="w-full h-full object-cover opacity-90 grayscale group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-1000 ease-out"
                 />
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-[#060e20] via-transparent to-transparent"></div>
@@ -243,7 +243,7 @@ export default function Landing() {
                 <img 
                   src="/images/success_clean_water.png" 
                   alt="Water stream" 
-                  className="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-all duration-1000 ease-out"
+                  className="w-full h-full object-cover opacity-90 grayscale group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-1000 ease-out"
                 />
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-[#060e20] via-transparent to-transparent"></div>
