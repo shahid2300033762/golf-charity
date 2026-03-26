@@ -44,7 +44,7 @@ export default function Subscribe() {
     
     try {
       const { data: { session } } = await supabase.auth.getSession();
-      const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+      const API_URL = import.meta.env.VITE_API_URL || '';
 
       // 2. Call our backend API to create the subscription & donation entries
       const res = await fetch(`${API_URL}/api/subscriptions`, {

@@ -32,7 +32,8 @@ export const drawService = {
 
   async claimPrize(winnerId: string, proofUrl: string) {
     const { data: { session } } = await supabase.auth.getSession();
-    const res = await fetch(`http://localhost:3001/api/winners/${winnerId}/claim`, {
+    const API_URL = import.meta.env.VITE_API_URL || '';
+    const res = await fetch(`${API_URL}/api/winners/${winnerId}/claim`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

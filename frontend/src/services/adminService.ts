@@ -1,6 +1,6 @@
 import { supabase } from '../lib/supabase';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+const API_URL = import.meta.env.VITE_API_URL || '';
 const BASE_URL = `${API_URL}/api/admin`;
 const DRAW_URL = `${API_URL}/api/draws`;
 
@@ -64,7 +64,7 @@ export const adminService = {
   },
 
   async getCharities() {
-    const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
+    const API_URL = import.meta.env.VITE_API_URL || '';
     const res = await fetch(`${API_URL}/api/charities`);
     return res.json();
   }
